@@ -17,16 +17,84 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
-```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
+Developed by: Gayathri A
+RegisterNumber:  212221230028
 */
+```
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+#assign input
+
+x=np.array([8,2,11,6,5,4,12,9,6,1])
+
+y=np.array([3,10,3,6,8,12,1,4,9,14])
+
+#mean values of input
+
+x_mean=np.mean(x)
+
+print(x_mean)
+
+y_mean=np.mean(y)
+
+print(y_mean)
+
+num=0
+
+denum=0
+
+for i in range(len(x)):
+
+num+=(x[i]-x_mean)*(y[i]-y_mean)
+
+denum+=(x[i]-x_mean)**2
+#find m
+
+m=num/denum
+
+#find b
+
+b=y_mean-m*x_mean
+
+print(m,b)
+
+#find y_pred
+
+y_pred=m*x+b
+
+print(y_pred)
+
+#plot graph
+
+plt.scatter(x,y)
+
+plt.plot(x,y_pred,color='purple')
+
+plt.show()
+
+import numpy as np
+
+import pandas as pd
+
+dataset=pd.read_csv('Placement_Data.csv')
+
+print(dataset.iloc[3])
+
+print(dataset.iloc[0:4])
+
+print(dataset.iloc[:,1:3])
 ```
 
 ## Output:
-![best fit line](sam.png)
+![ml1 2](https://user-images.githubusercontent.com/94154854/193321620-0859830d-824f-4615-9dbd-69e088474048.png)
+![ml1 21](https://user-images.githubusercontent.com/94154854/193321638-96142be9-a31d-4333-98a9-3d2f8954d031.png)
+![ml1 3](https://user-images.githubusercontent.com/94154854/193321651-745183d0-b2ff-4abb-9456-9abef90eb88b.png)
+![ml1 4](https://user-images.githubusercontent.com/94154854/193321677-f144b6d0-b04e-4231-bc41-cfdfebf2a824.png)
+
 
 
 ## Result:
